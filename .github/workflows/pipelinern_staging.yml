@@ -25,7 +25,7 @@ jobs:
       - name: Build android
         run: npm run &&  cd android && ./gradlew clean && ./gradlew assembleRelease
 
-        - name: Upload to App Center
+      - name: Upload to App Center
         uses: wzieba/AppCenter-Github-Action@v1
         with:
           appName: 'pipelinern/ENV_STAGING'  
