@@ -28,8 +28,8 @@ jobs:
       - name: Upload to App Center
         uses: wzieba/AppCenter-Github-Action@v1
         with:
-          appName: pipelinern/ENV_STAGING  
-          token: 1b914e78265381467ed8bfe16d82165c3929d37d
+          appName: pipelinern/ENV_PDN  
+          token: 92daaccae0de6268597636c2cfd441d53eb4e25c
           group: DEVOPS_STAGING 
           file: android/app/build/outputs/apk/release/app-release.apk  
           notifyTesters: true
