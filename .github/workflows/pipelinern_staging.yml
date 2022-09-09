@@ -5,13 +5,6 @@ on:
   pull_request:
     branches: [ "main" ]
 
-env:
-  APP_CENTER_TOKEN: ${{ secrets.AC_TOKEN_PRN_ANDROID_STAGING  }}  
-  APP_NAME: ${{ 'pipelinern/ENV_STAGING'  }}  
-  TESTING_GROUP: ${{  'DEVOPS_STAGING'  }} 
-  UPLOAD_FILE: ${{ 'android/app/build/outputs/apk/release/app-release.apk'  }}  
-  
-
 jobs:
   build:
     name: Build
@@ -35,9 +28,9 @@ jobs:
       - name: Upload to App Center
         uses: wzieba/AppCenter-Github-Action@v1
         with:
-          appName: ${{ env.APP_NAME }}
-          token: ${{ env.APP_CENTER_TOKEN }}
-          group: ${{ env.TESTING_GROUP }}
-          file: ${{ env.UPLOAD_FILE }}
+          appName: ${{ 'pipelinern/ENV_STAGING'  }}  
+          token: ${{ secrets.AC_TOKEN_PRN_ANDROID_STAGING  }} 
+          group: ${{  'DEVOPS_STAGING'  }} 
+          file: ${{ 'android/app/build/outputs/apk/release/app-release.apk'  }}  
           notifyTesters: true
           debug: false
