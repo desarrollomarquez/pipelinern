@@ -31,6 +31,6 @@ jobs:
           appName: pipelinern/envstaging  
           token: e8c00fb1d26ee50b8be95c640b12cfa004203eae
           group: testers 
-          file: android/app/build/outputs/apk/release/app-release.apk  
+          file: app/build/outputs/apk/release/app-release.apk  
           notifyTesters: true
           debug: false
