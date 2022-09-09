@@ -10,17 +10,27 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
 
-    steps:
+   steps:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: set up JDK 11
+        uses: actions/setup-java@v1
+        with:
+          java-version: 11
 
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build android
+        run: npm run &&  cd android && ./gradlew clean && ./gradlew assembleRelease
+        
       - name: Upload to App Center
         uses: wzieba/AppCenter-Github-Action@v1
         with:
-          appName: ${{ 'pipelinern/ENV_STAGING'  }}  
+          appName: 'pipelinern/ENV_STAGING'  
           token: 1b914e78265381467ed8bfe16d82165c3929d37d
-          group: ${{  'DEVOPS_STAGING'  }} 
-          file: ${{ 'android/app/build/outputs/apk/release/app-release.apk'  }}  
+          group: 'DEVOPS_STAGING' 
+          file: 'android/app/build/outputs/apk/release/app-release.apk'  
           notifyTesters: true
           debug: false
