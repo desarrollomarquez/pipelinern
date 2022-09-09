@@ -9,7 +9,7 @@ env:
   APP_CENTER_TOKEN: ${{ secrets.AC_TOKEN_PRN_ANDROID_STAGING  }}  
   APP_NAME: ${{ 'pipelinern/ENV_STAGING'  }}  
   TESTING_GROUP: ${{  'DEVOPS_STAGING'  }} 
-  UPLOAD_FILE: ${{ 'android/app/build/outputs/apk/release/app-release-unsigned.apk'  }}  
+  UPLOAD_FILE: ${{ 'android/app/build/outputs/apk/debug/app-debug-unsigned.apk'  }}  
   
 
 jobs:
