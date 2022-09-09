@@ -30,7 +30,7 @@ jobs:
         with:
           appName: pipelinern/ENV_PDN  
           token: 92daaccae0de6268597636c2cfd441d53eb4e25c
-          group: DEVOPS_STAGING 
+          group: testers 
           file: android/app/build/outputs/apk/release/app-release.apk  
           notifyTesters: true
           debug: false
