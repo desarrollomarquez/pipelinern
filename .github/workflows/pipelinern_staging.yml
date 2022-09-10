@@ -31,6 +31,6 @@ jobs:
           appName: pipelinern/stagingrn  
           token: ab20a026511a9a882dd6f54c1571bc250b36246a
           group: Testers 
-          file: app/build/outputs/apk/release/app-release.apk
+          file: android/app/build/outputs/apk/release/app-release.apk
           notifyTesters: true
           debug: false
