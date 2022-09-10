@@ -28,6 +28,6 @@ jobs:
       - name: Upload to App Center
         uses: grndvl1/appcenter-distribute-action@master
         with:
-          args: stores publish --file /android/app/build/outputs/apk/release/app-release.apk --store stagingrn --app pipelinern/stagingrn
+          args: stores publish --file android/app/build/outputs/apk/release/app-release.apk --store stagingrn --app pipelinern/stagingrn
         env:
           APPCENTER_ACCESS_TOKEN: 170e40d495e8c2b9af07f7cf8bd2818c9a8bdcd4
