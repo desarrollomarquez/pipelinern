@@ -29,7 +29,7 @@ jobs:
         uses: wzieba/AppCenter-Github-Action@v1
         with:
           appName: pipelinern/stagingrn  
-          token: 35364fc96b0af0456284144e654637082d2e32f0
+          token: 52295231a0f6ede4dc9121748d9b2c5e22b7f2f8
           group: testers 
           file: android/app/build/outputs/apk/release/app-release.apk  
           notifyTesters: true
