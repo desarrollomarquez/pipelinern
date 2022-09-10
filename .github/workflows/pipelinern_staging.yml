@@ -26,8 +26,11 @@ jobs:
         run: npm run &&  cd android && ./gradlew clean && ./gradlew assembleRelease
 
       - name: Upload to App Center
-        uses: grndvl1/appcenter-distribute-action@master
+        uses: wzieba/AppCenter-Github-Action@v1
         with:
-          args: stores publish --file android/app/build/outputs/apk/release/app-release.apk --store stagingrn --app pipelinern/stagingrn
-        env:
-          APPCENTER_ACCESS_TOKEN: 170e40d495e8c2b9af07f7cf8bd2818c9a8bdcd4
+          appName: pipelinern/stagingrn  
+          token: 170e40d495e8c2b9af07f7cf8bd2818c9a8bdcd4
+          group: testers 
+          file: app/build/outputs/apk/release/app-release-unsigned.apk  
+          notifyTesters: true
+          debug: false
