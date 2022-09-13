@@ -48,5 +48,5 @@ jobs:
           serviceAccountJsonPlainText: ${{secrets.SERVICE_ACCOUNT_JSON }}
           packageName: com.pipelinern
           releaseFiles: android/app/build/outputs/bundle/release/app-release.aab
-          track: beta
-          whatsNewDirectory: distribution/whatsnew
+          track: internal
+          whatsNewDirectory: android/release-notes/
