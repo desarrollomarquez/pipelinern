@@ -23,14 +23,20 @@ jobs:
         run: npm install
 
       - name: Build android
-        run: npm run &&  cd android && ./gradlew clean && ./gradlew assembleRelease
+        run: npm run &&  cd android && ./gradlew clean && ./gradlew bundleRelease
 
-      - name: Upload to App Center....
-        uses: wzieba/AppCenter-Github-Action@v1
+      - name: Sign Release
+        uses: r0adkll/sign-android-release@v1
         with:
-          appName: pipelinern/stagingrn
-          token: ab20a026511a9a882dd6f54c1571bc250b36246a
-          group: Testers
-          file: android/app/build/outputs/apk/release/app-release.apk
-          notifyTesters: true
-          debug: false
+          releaseDirectory: app/build/outputs/bundle/release
+          signingKeyBase64: ${{ secrets.SIGNING_KEY }}
+          alias: ${{ secrets.ALIAS }}
+          keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
+          keyPassword: ${{ secrets.KEY_PASSWORD }}
+      
+      - name: Upload AAB
+        id: uploadArtifact
+        uses: actions/upload-artifact@v1
+        with:
+            name: app
+            path: app/build/outputs/bundle/release/app-release.aab
