@@ -24,6 +24,15 @@ jobs:
 
       - name: Build android
         run: npm run &&  cd android && ./gradlew clean && ./gradlew bundle
+
+      - name: Sign Release
+        uses: r0adkll/sign-android-release@v1
+        with:
+          releaseDirectory: android/app/build/outputs/bundle/release/
+          signingKeyBase64: ${{ secrets.SIGNING_KEY }}
+          alias: ${{ secrets.ALIAS }}
+          keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
+          keyPassword: ${{ secrets.KEY_PASSWORD }}
       
       - name: Upload AAB
         id: uploadArtifact
