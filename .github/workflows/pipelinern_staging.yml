@@ -23,7 +23,7 @@ jobs:
         run: npm install
 
       - name: Build android
-        run: npm run &&  cd android && ./gradlew clean && ./gradlew bundleRelease
+        run: npm run &&  cd android && ./gradlew clean && ./gradlew bundle
 
       - name: Sign Release
         uses: r0adkll/sign-android-release@v1
