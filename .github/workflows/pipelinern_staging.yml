@@ -50,4 +50,4 @@ jobs:
           releaseFiles: android/app/build/outputs/bundle/release/app-release.aab
           track: beta
           status: completed
-          whatsNewDirectory: android/release-notes/
+          mappingFile: mapping.txt
