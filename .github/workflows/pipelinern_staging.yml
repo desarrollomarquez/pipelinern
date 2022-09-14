@@ -49,4 +49,5 @@ jobs:
           packageName: com.pipelinern
           releaseFiles: android/app/build/outputs/bundle/release/app-release.aab
           track: beta
+          status: completed
           whatsNewDirectory: android/release-notes/
